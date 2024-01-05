@@ -19,6 +19,11 @@ const loop = async (config) => {
                 data: {
                     format: false,
                 },
+                schema: {
+                    table: {
+                        dropIfExist: true, // 删除表重新导入，否则 insert 会有主键重复的问题
+                    },
+                },
             },
         });
         count++;
